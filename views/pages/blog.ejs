@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=SUSE:wght@100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #1A1A1A;
+    font-family: "Quicksand", serif;
+    color: #E3FEF7;
+}
+
+::-webkit-scrollbar {
+    width: 0.7vw;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 50px;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5vw 3vw;
+}
+
+header h1 {
+    color: #E3FEF7;
+    font-size: 1.8vw;
+}
+
+header a {
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-decoration: none;
+    color: #77B0AA;
+}
+
+img {
+    width: 25%;
+    margin: 2vw auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#h1 {
+    font-size: 2.2vw;
+    margin: 1vw 7vw;
+    color: #77B0AA;
+}
+
+#h2 {
+    font-size: 1.5vw;
+    color: #B0E0E6;
+    margin: 1vw 7vw;
+}
+
+p {
+    font-size: 1.2vw;
+    margin: 2vw 7vw;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #CCCCCC;
+    white-space: pre-wrap;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    padding-bottom: 2vw;
+}
+
+/* Responsive Design */
+@media (max-width: 850px) {
+    header {
+        padding: 4vw;
+    }
+
+    header h1 {
+        font-size: 4.5vw;
+    }
+
+    header a {
+        font-size: 3.5vw;
+    }
+
+    img {
+        width: 70%;
+        margin: 2vw auto;
+    }
+
+    #h1 {
+        font-size: 5vw;
+        margin: 2vw 5vw;
+    }
+
+    #h2 {
+        font-size: 3.5vw;
+        margin: 1.5vw 5vw;
+    }
+
+    p {
+        font-size: 2.5vw;
+        margin: 3vw 5vw;
+    }
+}
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>BlogBog</h1>
+        <a href="/">HOME</a>
+    </header>
+
+    <img src=<%=`/image/${blog.blog_id}`%> alt="">
+    <h2 id="h2">By <%= blog.auhtor %> on <%= `${new Date(blog.published_date).toDateString()}` %></h3>
+    <h1 id="h1"><%= blog.title %></h1>
+    <p style="white-space: pre-wrap"><%= blog.content %></p>
+</main>
+</body>
+</html>

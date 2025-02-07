@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - BlogBog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</head>
+<body
+    class="bg-[url(https://img.freepik.com/free-vector/technology-wire-mesh-network-connection-digital-background_1017-28407.jpg?t=st=1737835332~exp=1737838932~hmac=4e418ead3e72f764da725f464e514d8cad66ee88e59315ad41d4dd540b43e6dc&w=1060)] flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat">
+    <div class="bg-white/20 backdrop-blur-lg p-8 rounded-lg shadow-lg w-96 text-white text-center">
+        <h2 class="text-2xl font-semibold text-center mb-6">Sign Up for My Blog</h2>
+        <form action="/createAccount" method="POST" class="space-y-6">
+            <div class="space-y-2">
+                <input type="text" id="fullname" name="fullname" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Full Name">
+            </div>
+            <div class="space-y-2">
+                <input type="text" id="username" name="username" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Username">
+            </div>
+            <div class="space-y-2">
+                <input type="password" id="password" name="password" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Password">
+            </div>
+            <div class="space-y-2">
+                <input type="password" id="confirmpassword" name="confirmpassword" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Confirm Password">
+            </div>
+            <button type="submit"
+                class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign
+                Up</button>
+        </form>
+        <p class="text-center mt-4">Already have an account? <a href="/login"
+                class="text-[#8cdf77] hover:text-[#45e81d]">Login here</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cover bg-center h-screen" style="background-image: url(https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white/20 backdrop-blur-lg p-8 rounded-lg shadow-lg w-96 text-black text-center">
+            <h2 class="text-2xl font-bold mb-4">Create a Blog</h2>
+            <div>
+
+                <form action="/submitBlog" method="POST" enctype="multipart/form-data">
+                    <!-- Blog Title -->
+                    <div class="mb-4">
+                        <input type="text" id="title" name="title" placeholder="Blog Title" required
+                        class="w-full bg-white/30 p-3 rounded-lg text-black placeholder-black outline-none">
+                    </div>
+                    
+                    <!-- Author -->
+                <div class="mb-4">
+                    <input type="text" id="author" name="author" placeholder="Author Name"
+                    class="w-full bg-white/30 p-3 rounded-lg text-black placeholder-black outline-none">
+                </div>
+                
+                <!-- Image URL -->
+                <div class="mb-4 flex items-end px-4 gap-2 cursor-pointer">
+                    <!-- <input type="file" id="image" name="image" placeholder="Image(Optional but Preffered)"
+                    class="w-full bg-white/30 p-3 rounded-lg text-black placeholder-black outline-none"> -->
+                    <h1>Upload Banner Image</h1>
+                    <input type="file" accept="image/*" name="blog-img" id="blog-img" hidden>
+                    <label for="blog-img" id="blog-img-lable"><img src="https://www.pngplay.com/wp-content/uploads/8/Upload-Icon-Image-Transparent-Image.png" alt="upload blog image" class="h-5"></label>
+                </div>
+                
+                <!-- Blog Content -->
+                <div class="mb-4">
+                    <textarea id="content" name="content" placeholder="Write your blog content here..." required rows="5"
+                    class="w-full bg-white/30 p-3 rounded-lg text-black placeholder-black outline-none"></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold">
+                <i class="fas fa-paper-plane"></i> <span id="form-button-text">Publish Blog</span>
+            </button>
+        </form>
+    </div>
+        </div>    
+    </div>
+</body>
+</html>

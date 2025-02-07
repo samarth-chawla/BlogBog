@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="css\main.css">
+<div
+    class="bg-[url(https://img.freepik.com/free-photo/flat-lay-photo-office-desk-with-laptop-copy-space-background_1150-45598.jpg?t=st=1737809713~exp=1737813313~hmac=29f9ab4129dbdf19e215a70a2b646837cb2b13ccad1bc5eb85ea40d68ffc69f7&w=996)] bg-cover h-screen flex flex-col relative">
+    <%- include ('../partials/header' , {auth:auth,user:user,blogs})%>
+    <%- include ('../partials/navbar', {auth:auth})%>
+        <div class="bg-transparent w-full text-center flex-1 z-10">
+            <div class="flex flex-col justify-center items-center h-[100%]">
+                <h1 class="text-5xl mb-10 font-bold text-[#2E4A29]">"Dive deep into the blogosphere with BlogBog!"</h1>
+                <form action='/create'>
+                    <button class="overflow-hidden h-12 rounded-xl "><span class="bg-[#2E4A29] text-[white] p-4 rounded-xl">Create a blog</span></button>
+                </form>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom-1737810673">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <rect x="1200" height="3.6"></rect>
+                <rect height="3.6"></rect>
+                <path d="M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+</div>
+<!-- Popup Modal -->
+<div id="popup" class="fixed inset-0    items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 absolute left-[40%]">
+        <h3 class="text-lg font-bold "><%=msg %></h3>
+        <button onclick="closePopup()" class="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
+            OK
+        </button>
+    </div>
+</div>
+<% if (msg) { %>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const popup = document.getElementById("popup");
+            popup.classList.remove("hidden");
+            setTimeout(() => {
+                popup.classList.add("hidden");
+            }, 3000);
+        });
+    </script>
+<% } %>
+
+<%- include ('../partials/blogs', {auth,user,blogs}) %>
+<%- include ('../partials/footer') %>

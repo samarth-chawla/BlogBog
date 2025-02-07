@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BlogBog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</head>
+
+<body class="h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat"
+    style="background-image: url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+    <div class="bg-white/20 backdrop-blur-lg p-8 rounded-lg shadow-lg w-96 text-white text-center">
+        <h2 class="text-2xl font-bold mb-4">Login to BlogBog</h2>
+        <form action="/loginUser" method="POST">
+            <div class="mb-4">
+                <input type="text" id="username" name="username" placeholder="Username" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none">
+            </div>
+            <div class="mb-4">
+                <input type="password" id="password" name="password" placeholder="Password" required
+                    class="w-full bg-white/30 p-3 rounded-lg text-white placeholder-white outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <button type="submit" class="px-8 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold">
+                <i class="fas fa-sign-in-alt"></i> <span id="form-button-text">Login</span>
+            </button>
+        </form>
+        <button onclick="window.location.href='/auth/google'"
+            style="padding: 10px; font-size: 16px; background-color: #4285F4; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 5px;">
+            Sign in with Google
+        </button>
+        <p class="mt-4">
+            <span>Don't have an account?</span>
+            <a href="/signup">
+                <button class="text-blue-300 hover:underline font-semibold">
+                    <span>Sign Up</span>
+                </button>
+            </a>
+        </p>
+    </div>
+</body>
+
+</html>
