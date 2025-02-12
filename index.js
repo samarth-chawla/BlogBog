@@ -199,6 +199,9 @@ app.get(
 )
 
 app.post('/submitBlog', upload.single('blog-img'), async (req, res) => {
+  if (!req.isAuthenticated()) {
+    return res.redirect('/login'); // Redirect if not logged in
+  }
   const title = req.body.title
   const author = req.body.author || req.user.username
   const image = req.file.buffer
