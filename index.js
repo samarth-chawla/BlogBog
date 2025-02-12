@@ -97,7 +97,7 @@ app.post('/createAccount', async function (req, res) {
               'INSERT INTO users(fullname,username,password) VALUES ($1,$2,$3) RETURNING *',
               [name, user, hash]
             )
-            const user = result.rows[0]
+            user = result.rows[0]
             req.login(user, err => {
               if (err) {
                 console.log(err)
