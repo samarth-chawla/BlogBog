@@ -64,7 +64,7 @@ app.get("/search", async (req, res)=>{
   const auth = req.isAuthenticated()
   const search = req.query.query;
   const result = await db.query(
-    "SELECT * FROM blogs WHERE auhtor ILIKE $1",
+    "SELECT * FROM blogs WHERE author ILIKE $1",
     [search])
   if(result){
     res.render('pages/index', { auth: auth, user: req.user?.username || null, blogs: result.rows, msg:null })
@@ -206,7 +206,7 @@ app.post('/submitBlog', upload.single('blog-img'), async (req, res) => {
   req.session.successMessage = "Your blog is submmited successfuly";
   try {
     const result = await db.query(
-      'INSERT INTO blogs (title,auhtor,image,content,user_id) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      'INSERT INTO blogs (title,author,image,content,user_id) VALUES ($1, $2, $3, $4, $5) RETURNING *',
       [title, author, image, content, req.user.id]
     )
     res.redirect("/");
